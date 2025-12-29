@@ -1,6 +1,6 @@
 create database task2;
 use task2;
-drop database task2;
+
 create table departments (
 	dept_id INT PRIMARY KEY,
     dept_name VARCHAR(50)
