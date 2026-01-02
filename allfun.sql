@@ -1,15 +1,17 @@
+drop database hoteldata;
+
 CREATE DATABASE HOTELDATA;
 USE HOTELDATA;
 
 -- CUSTOMER table with all constraints
 CREATE TABLE CUSTOMER (
-    CUSID INT PRIMARY KEY,                     -- Primary Key
-    NAME VARCHAR(100) NOT NULL,                -- NOT NULL
-    EMAIL VARCHAR(100) UNIQUE,                 -- UNIQUE
-    FEES DECIMAL(10,2) CHECK (FEES >= 3000),   -- CHECK
-    CLASS VARCHAR(50) DEFAULT 'STANDARD',      -- DEFAULT
+    CUSID INT PRIMARY KEY,                     
+    NAME VARCHAR(100) NOT NULL,                
+    EMAIL VARCHAR(100) UNIQUE,                 
+    FEES DECIMAL(10,2) CHECK (FEES >= 3000),   
+    CLASS VARCHAR(50) DEFAULT 'STANDARD',      
     BOOKINGDATE DATE NOT NULL,
-    ROOMID INT,                                -- Foreign Key
+    ROOMID INT,                                
     FOREIGN KEY (ROOMID) REFERENCES ROOM(ROOMID)
 );
 
